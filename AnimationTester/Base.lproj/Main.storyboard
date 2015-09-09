@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8O-mB-MXI">
+                                <rect key="frame" x="277" y="20" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="rex-aQ-jvR"/>
+                                </constraints>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="20" width="46" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="338" y="28" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="clearBoxes:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rz4-YC-wbb"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.01" minValue="0.01" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-kt-g6G">
+                                <rect key="frame" x="153" y="20" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="iZf-XO-z4A"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="gravitySlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="aWo-eh-eLo"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gravity: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QG-TQ-OPF">
+                                <rect key="frame" x="155" y="58" width="114" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51K-ve-oYs">
+                                <rect key="frame" x="331" y="20" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1QG-TQ-OPF" firstAttribute="leading" secondItem="e9l-kt-g6G" secondAttribute="leading" id="7rb-bY-UBj"/>
+                            <constraint firstItem="e9l-kt-g6G" firstAttribute="top" secondItem="G8O-mB-MXI" secondAttribute="top" id="Bnh-AO-kTW"/>
+                            <constraint firstItem="G8O-mB-MXI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="CsQ-t0-Dy5"/>
+                            <constraint firstItem="G8O-mB-MXI" firstAttribute="leading" secondItem="e9l-kt-g6G" secondAttribute="trailing" constant="8" symbolic="YES" id="Lvp-7T-dPN"/>
+                            <constraint firstItem="1QG-TQ-OPF" firstAttribute="trailing" secondItem="e9l-kt-g6G" secondAttribute="trailing" id="RjF-7v-XM6"/>
+                            <constraint firstItem="G8O-mB-MXI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="WZb-mL-lqq"/>
+                            <constraint firstItem="1QG-TQ-OPF" firstAttribute="top" secondItem="e9l-kt-g6G" secondAttribute="bottom" constant="8" symbolic="YES" id="hSB-5Q-kvZ"/>
+                            <constraint firstItem="51K-ve-oYs" firstAttribute="top" secondItem="G8O-mB-MXI" secondAttribute="top" id="wqp-QT-KLQ"/>
+                            <constraint firstItem="51K-ve-oYs" firstAttribute="leading" secondItem="G8O-mB-MXI" secondAttribute="trailing" constant="8" symbolic="YES" id="wxm-zy-Dd5"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="u4W-Bq-aXo" appends="YES" id="cZe-XY-hKN"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="clearButton" destination="G8O-mB-MXI" id="5m7-cr-7dx"/>
+                        <outlet property="destroyEnabled" destination="51K-ve-oYs" id="SWp-Wj-DFc"/>
+                        <outlet property="gravitySelectLabel" destination="1QG-TQ-OPF" id="W9o-24-v9y"/>
+                        <outlet property="gravitySlider" destination="e9l-kt-g6G" id="TXy-CJ-6C3"/>
+                        <outlet property="myView" destination="kh9-bI-dsS" id="Zg9-LB-Uaw"/>
+                        <outlet property="tapRecognizer" destination="u4W-Bq-aXo" id="Cty-Vj-RDd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="u4W-Bq-aXo">
+                    <connections>
+                        <action selector="screenTapped:" destination="vXZ-lx-hvc" id="3ZL-uc-EGn"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="222" y="75"/>
+        </scene>
+    </scenes>
+</document>
